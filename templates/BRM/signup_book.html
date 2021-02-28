@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign UP</title>
+    <link rel="stylesheet" href="{% static 'css/BRMstyle.css' %}">
+  </head>
+  <body>
+    <div id="header">
+      <h1>Book Record Management</h1>
+      <div id="nav">
+          <a href="/BRM/view-books">View All</a>
+          <a href="/BRM/new-book">Add New</a>
+          <a href="/BRM/search-book">Search</a>
+          <a href="/BRM/login">Login</a>
+      </div>
+    </div>
+    <div id="main">
+      <form method="post">
+        {% csrf_token  %}
+          Username <br><input type="text"  placeholder="Username" name="username" required/><br><br>
+          First Name<br><input type="text"  placeholder="First Name" name="first_name"><br><br>
+          Last Name <br><input type="text"  placeholder="Last Name" name="last_name" ><br><br>
+          E - mail <br><input type="text" name="email" placeholder="e - mail" required/><br><br>
+          Password <br><input type="password"  placeholder="Password" name="password1" required/><br><br>
+          Confirm Pass <br><input type="password"  placeholder="Confirm Password" name="password2" required/><br><br>
+        <button type="submit" name="submit">Submit</button>
+      </form>
+
+    </div>
+  </body>
+</html>
